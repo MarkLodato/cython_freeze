@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+"""
+Create a C file for embedding one or more Cython source files.
+Requires Cython 0.11.2 (or perhaps newer).
+
+See README.rst for more details.
+"""
 
 import sys
 
