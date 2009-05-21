@@ -79,3 +79,4 @@ SEE ALSO
 
 * `Python <http://www.python.org>`_
 * `Cython <http://www.cython.org>`_
+* `freeze.py <http://wiki.python.org/moin/Freeze>`_
