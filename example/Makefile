@@ -1,6 +1,6 @@
 CC = gcc
 CYTHON = cython
-CYTHON_FREEZE = ../cython_freeze.py
+CYTHON_FREEZE = ../cython_freeze
 
 CFLAGS = -fPIC -g -O2 -Wall -Wextra
 CPPFLAGS = -I /usr/include/python2.6
