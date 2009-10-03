@@ -6,18 +6,24 @@ Requires Cython 0.11.2 (or perhaps newer).
 See README.rst for more details.
 """
 
-import sys
+import optparse
 
-if len(sys.argv) < 2:
-    print >>sys.stderr, "USAGE: %s module [module ...]" % sys.argv[0]
-    sys.exit(1)
+usage= '%prog module [module ...]'
+description = 'Create a C file for embedding Cython modules.'
+p = optparse.OptionParser(usage=usage, description=description)
+
+options, args = p.parse_args()
+
+if len(args) < 1:
+    p.print_help()
+    p.exit(1)
 
 def format_modname(name):
     if name.endswith('.pyx'):
         name = name[:-4]
     return name.replace('.','_')
 
-modules = [format_modname(x) for x in sys.argv[1:]]
+modules = [format_modname(x) for x in args]
 
 print """
 #include <Python.h>
