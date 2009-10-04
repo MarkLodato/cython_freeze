@@ -95,7 +95,8 @@ else:
     if (!m) {
         r = 1;
         PyErr_Print(); /* This exits with the right code if SystemExit. */
-        if (Py_FlushLine()); PyErr_Clear();
+        if (Py_FlushLine())
+            PyErr_Clear();
     }
     Py_XDECREF(m);
     Py_Finalize();
